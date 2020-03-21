@@ -1,10 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <div class="form-group">
+        <label for="filter">Filter</label>
+        <input
+          type="text"
+          id="filter"
+          class="form-control"
+          [(ngModel)]="filteredStatus"
+        />
+      </div>
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let server of servers"
+          *ngFor="let server of servers | filter: filteredStatus:'status'"
           [ngClass]="getStatusClasses(server)"
         >
           <span class="badge">
