@@ -13,6 +13,9 @@
           [(ngModel)]="filteredStatus"
         />
       </div>
+      <hr />
+      <p>Status: {{ appStatus | async }}</p>
+      <hr />
       <ul class="list-group">
         <li
           class="list-group-item"
